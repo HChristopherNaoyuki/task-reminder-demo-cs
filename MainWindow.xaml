@@ -1,0 +1,43 @@
+﻿<Window x:Class="task_reminder_demo_cs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Task Reminder" Height="450" Width="800">
+
+    <Grid Margin="10">
+
+        <!-- Chat list view -->
+        <ListView x:Name="ChatListView"
+                  Width="760"
+                  Margin="10,0,10,115"
+                  MouseDoubleClick="ChatListView_MouseDoubleClick" />
+
+        <!-- Input box with placeholder using Grid -->
+        <Grid Height="30" Width="760" Margin="0,300,0,80" VerticalAlignment="Bottom">
+            <TextBox x:Name="UserInputTextBox"
+                     FontSize="14"
+                     VerticalContentAlignment="Center"
+                     TextChanged="UserInputTextBox_TextChanged"
+                     GotFocus="UserInputTextBox_GotFocus"
+                     LostFocus="UserInputTextBox_LostFocus"/>
+            <TextBlock x:Name="PlaceholderTextBlock"
+                       Text="Type 'add task' followed by your task..."
+                       FontStyle="Italic"
+                       Foreground="Gray"
+                       IsHitTestVisible="False"
+                       Margin="5,0,0,0"
+                       VerticalAlignment="Center"
+                       Visibility="Visible" />
+        </Grid>
+
+        <!-- Ask question button -->
+        <Button x:Name="SubmitButton"
+                Content="Ask Question"
+                Height="40"
+                Width="760"
+                Margin="0,0,0,20"
+                VerticalAlignment="Bottom"
+                FontSize="16"
+                Click="SubmitButton_Click" />
+
+    </Grid>
+</Window>
